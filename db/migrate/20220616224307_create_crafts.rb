@@ -4,6 +4,7 @@ class CreateCrafts < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :description
       t.integer :difficulty
+      t.string :materials
 
       t.timestamps
     end
