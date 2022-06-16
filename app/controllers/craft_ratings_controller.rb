@@ -1,0 +1,2 @@
+class CraftRatingsController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class FavoriteCraftsController < ApplicationController
+end

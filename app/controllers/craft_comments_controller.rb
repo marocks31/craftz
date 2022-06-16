@@ -1,0 +1,2 @@
+class CraftCommentsController < ApplicationController
+end

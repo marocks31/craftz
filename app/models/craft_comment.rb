@@ -1,0 +1,2 @@
+class CraftComment < ApplicationRecord
+end
