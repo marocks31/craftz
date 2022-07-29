@@ -1,0 +1,27 @@
+### Crafts Index
+GET http://localhost:3000/crafts.json
+
+### Crafts Create
+POST http://localhost:3000/crafts.json
+Content-Type: application/json
+{
+ "name": "Potato Doll",
+ "description": "A doll can be made with spuds, toothpicks, glue, paper scraps, googly eyes, and doll hair",
+ "materials": "potato, glue, toothpics, decorating supplies"
+}
+
+### Crafts Show
+GET http://localhost:3000/crafts/1.json
+
+### Crafts Update
+PATCH http://localhost:3000/crafts/1.json
+Content-Type: application/json
+
+{
+ "name": "Potato Doll",
+ "description": "A doll can be made with spuds, toothpicks, glue, paper scraps, googly eyes, and doll hair",
+ "materials": "potato, glue, toothpics, decorating supplies"
+}
+
+### Crafts Destroy
+DELETE http://localhost:3000/crafts/1.json
