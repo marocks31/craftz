@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTk0Njg5NTJ9.MhGC4mrXBKhwf3-QrI0VXXC1OX5LYNEKWS6RYM9NROw
+
 ### Users create (signup)
 POST http://localhost:3000/users
 Content-Type: application/json
@@ -9,11 +11,21 @@ Content-Type: application/json
   "password_confirmation": "password"
 }
 
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
+}
+
 ### Crafts Index
 GET http://localhost:3000/crafts.json
 
 ### Crafts Create
 POST http://localhost:3000/crafts.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 {
  "name": "Potato Doll",
@@ -26,6 +38,7 @@ GET http://localhost:3000/crafts/1.json
 
 ### Crafts Update
 PATCH http://localhost:3000/crafts/1.json
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
@@ -36,3 +49,4 @@ Content-Type: application/json
 
 ### Crafts Destroy
 DELETE http://localhost:3000/crafts/1.json
+Authorization: Bearer {{jwt}}

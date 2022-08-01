@@ -33,6 +33,6 @@ class CraftsController < ApplicationController
   def destroy
     craft = Craft.find_by(id: params[:id])
     craft.destroy
-    render json: (message: "Post successfully destroyed.")
+    render json: {message: "Post successfully destroyed."}
   end
 end
