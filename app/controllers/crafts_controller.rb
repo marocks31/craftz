@@ -5,12 +5,21 @@ class CraftsController < ApplicationController
   end
 
   def create
+    response = Cloudinary::Uploader.upload(params[:image_file], resource_type: :auto)
+    cloudinary_url = response["secure_url"]
+
     craft = Craft.new(
       name: params[:name],
       description: params[:description],
       difficulty: params[:difficulty],
-      materials: params[:materials]
+      materials: params[:materials],
+      image: cloudinary_url
     )
+    if craft.save
+      render json: craft
+    else
+      render json: {errors: craft.errors.full_messages}, status: 422
+    end
     craft.save
     render json: craft.as_json
   end
