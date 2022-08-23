@@ -13,14 +13,12 @@ class CraftsController < ApplicationController
     else
       image_url = nil
     end 
-
-    craft = Craft.new(
+    craft = current_user.crafts.new(
       name: params[:name],
       description: params[:description],
       difficulty: params[:difficulty],
       materials: params[:materials],
-      image: image_url,
-      user_id: current_user.id
+      image: image_url
     )
     if craft.save
       render json: craft

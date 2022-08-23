@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjA0OTE5NzV9.oam3pTpnKIUrfrq83vWgtkKDUFfYj6ZHCg_c0tzAg_Q
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjEyNzQ1ODJ9.qhu0p97Cf0905CxMAXKSKpgErAIVKoXeptOvf3GSIPc
 
 ### Users create (signup)
 POST http://localhost:3000/users
@@ -31,7 +31,7 @@ Content-Type: application/json
  "name": "Potato Doll",
  "description": "A doll can be made with spuds, toothpicks, glue, paper scraps, googly eyes, and doll hair",
  "materials": "potato, glue, toothpics, decorating supplies",
- "image_url": "test",
+ "image_url": "test"
 }
 
 ### Crafts Show
