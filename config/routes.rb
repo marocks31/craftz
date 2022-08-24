@@ -9,6 +9,14 @@ Rails.application.routes.draw do
   patch "/crafts/:id" => "crafts#update"
   delete "/crafts/:id" => "crafts#destroy"
 
+  get "/favorites" => "favorites#index"
+  post "/favorites" => "favorites#create"
+
+  # resources :crafts do
+  #   resources :favorites
+  #   end
+  # end 
+
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
 end
