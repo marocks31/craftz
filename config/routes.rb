@@ -9,11 +9,13 @@ Rails.application.routes.draw do
   patch "/crafts/:id" => "crafts#update"
   delete "/crafts/:id" => "crafts#destroy"
 
-  get "/favorites" => "favorites#index"
-  post "/favorites" => "favorites#create"
-  get "/favorites/:id" => "favorites#show"
-  delete "/favorites/:id" => "favorites#destroy"
+  #routing error, FavoriteCrafts controller...
+  get "/favorites" => "favorite_crafts#index"
+  post "/favorites" => "favorite_crafts#create"
+  get "/favorites/:id" => "favorite_crafts#show"
+  delete "/favorites/:id" => "favorite_crafts#destroy"
 
+  # built in ruby method to generate routes 
   # resources :crafts do
   #   resources :favorites
   #   end

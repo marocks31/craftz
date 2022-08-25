@@ -1,27 +1,25 @@
 class FavoriteCraftsController < ApplicationController
   def index
-    favorites = Favorite.all
-    render json: favorites
+    favorites = FavoriteCraft.all
+    render json: favorites.as_json(methods: [:craft])
   end
 
   def create
-    favorite = Favorite.new(
+    favorite = FavoriteCraft.new(
       user_id: params[:user_id],
-      craft_id: params[:craft_id],
-      name: params[:name],
-      image: params[:image]
+      craft_id: params[:craft_id]
     )
     favorite.save
     render json: favorite
   end
 
   def show
-    favorite = Favorite.find_by(id: params[:id])
+    favorite = FavoriteCraft.find_by(id: params[:id])
     render json: favorite
   end
 
   def destroy
-    favorite = Favorite.find_by(id: params[:id])
+    favorite = FavoriteCraft.find_by(id: params[:id])
     favorite.destroy
     render json: {message: "Favorite successfully removed."}
   end 
