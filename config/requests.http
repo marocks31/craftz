@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjEyNzQ1ODJ9.qhu0p97Cf0905CxMAXKSKpgErAIVKoXeptOvf3GSIPc
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjE4MTY3MTB9.995cMo5-OLiyaDwIOjfhDVwqhljawIuLuksep-sSJXk
 
 ### Users create (signup)
 POST http://localhost:3000/users
@@ -52,3 +52,15 @@ Content-Type: application/json
 ### Crafts Destroy
 DELETE http://localhost:3000/crafts/1.json
 Authorization: Bearer {{jwt}}
+
+#will test on frontend
+# ### Comments Create
+# POST http://localhost:3000/comments.json
+# Authorization: Bearer {{jwt}}
+# Content-Type: application/json
+# {
+#  "name": "Potato Doll",
+#  "description": "A doll can be made with spuds, toothpicks, glue, paper scraps, googly eyes, and doll hair",
+#  "materials": "potato, glue, toothpics, decorating supplies",
+#  "image_url": "test"
+# }
