@@ -1,7 +1,10 @@
 class FavoriteCraftsController < ApplicationController
   def index
-    favorites = FavoriteCraft.all
-    render json: favorites.as_json(methods: [:craft])
+   
+    # render json: current_user.favorite_crafts.map(&:craft)
+    # n1, makes a query for each favorite
+    render json: current_user.favorite_crafts.includes(:craft).map(&:craft)
+    # grabs user, eager loads crafts linked to favorite crafts at the same time as favorite crafts
   end
 
   def create
