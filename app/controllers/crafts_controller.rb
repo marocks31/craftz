@@ -1,7 +1,7 @@
 class CraftsController < ApplicationController
   def index
     crafts = Craft.all
-    render json: crafts.as_json
+    render json: crafts
   end
 
   def create
@@ -29,7 +29,7 @@ class CraftsController < ApplicationController
 
   def show
     craft = Craft.find_by(id: params[:id])
-    render json: craft.as_json
+    render json: craft
   end
 
   def update
@@ -39,7 +39,7 @@ class CraftsController < ApplicationController
     craft.difficulty = params[:difficulty] || craft.difficulty
     craft.materials = params[:materials] || craft.materials
     craft.save
-    render json: craft.as_json
+    render json: craft
   end
 
   def destroy

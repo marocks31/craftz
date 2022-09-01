@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjE4MTY3MTB9.995cMo5-OLiyaDwIOjfhDVwqhljawIuLuksep-sSJXk
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjIwNzY1Mzl9.RUwGbfzu5S1zUxLDLWgQd2M4OLyZBZx4hM-awuBmW-E
 
 ### Users create (signup)
 POST http://localhost:3000/users
@@ -21,36 +21,38 @@ Content-Type: application/json
 }
 
 ### Crafts Index
-GET http://localhost:3000/crafts.json
+GET http://localhost:3000/crafts
 
 ### Crafts Create
-POST http://localhost:3000/crafts.json
+POST http://localhost:3000/crafts
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
+
 {
- "name": "Potato Doll",
- "description": "A doll can be made with spuds, toothpicks, glue, paper scraps, googly eyes, and doll hair",
- "materials": "potato, glue, toothpics, decorating supplies",
+ "name": "Test2",
+ "description": "testing 1, 2, 3",
+ "materials": "testing 1, 2, 3",
+ "difficulty": 3,
  "image_url": "test"
 }
 
 ### Crafts Show
-GET http://localhost:3000/crafts/1.json
+GET http://localhost:3000/crafts/9
 
 ### Crafts Update
-PATCH http://localhost:3000/crafts/1.json
+PATCH http://localhost:3000/crafts/10
 Authorization: Bearer {{jwt}}
-Content-Type: application/json
 
 {
- "name": "Potato Doll",
- "description": "A doll can be made with spuds, toothpicks, glue, paper scraps, googly eyes, and doll hair",
- "materials": "potato, glue, toothpics, decorating supplies",
+ "name": "test 4",
+ "description": "testing 1, 2, 3",
+ "materials": "testing 1, 2, 3",
+ "difficulty": 2,
  "image_url": "test",
 }
 
 ### Crafts Destroy
-DELETE http://localhost:3000/crafts/1.json
+DELETE http://localhost:3000/crafts/10
 Authorization: Bearer {{jwt}}
 
 #will test on frontend
