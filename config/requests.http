@@ -49,6 +49,7 @@ Authorization: Bearer {{jwt}}
  "materials": "testing 1, 2, 3",
  "difficulty": 2,
  "image_url": "test",
+ "image": "n/a"
 }
 
 ### Crafts Destroy
