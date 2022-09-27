@@ -22,7 +22,7 @@ class FavoriteCraftsController < ApplicationController
   end
 
   def destroy
-    favorite = FavoriteCraft.find_by(id: params[:id])
+    favorite = FavoriteCraft.find_by!(craft_id: params[:id], user_id: current_user.id)
     favorite.destroy
     render json: {message: "Favorite successfully removed."}
   end 
