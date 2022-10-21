@@ -32,6 +32,7 @@ class CraftsController < ApplicationController
     render json: craft
   end
 
+
   def update
     craft = Craft.find_by(id: params[:id])
     craft.name = params[:name] || craft.name

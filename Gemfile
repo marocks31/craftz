@@ -14,6 +14,7 @@ gem "puma", "~> 5.0"
 
 gem 'jwt'
 
+gem 'rspec', '~> 3.0'
 #serializer
 gem 'active_model_serializers', '~> 0.10.0'
 
