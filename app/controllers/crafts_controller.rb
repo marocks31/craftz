@@ -1,6 +1,7 @@
 class CraftsController < ApplicationController
   def index
     crafts = Craft.all
+    crafts = crafts.order(:id => :asc)
     render json: crafts
   end
 
@@ -13,17 +14,18 @@ class CraftsController < ApplicationController
     else
       image_url = nil
     end 
-    craft = current_user.crafts.new(
+    craft = Craft.new(
       name: params[:name],
       description: params[:description],
       difficulty: params[:difficulty],
       materials: params[:materials],
-      image: image_url
+      image: image_url,
+      user_id: current_user.id
     )
     if craft.save
       render json: craft
     else
-      render json: {errors: craft.errors.full_messages}, status: 422
+      render json: {errors: craft.errors.full_messages}, status: :unprocessable_entity
     end
   end
 
@@ -34,13 +36,19 @@ class CraftsController < ApplicationController
 
 
   def update
-    craft = Craft.find_by(id: params[:id])
+    craft_id = params["id"]
+    craft = Craft.find(craft_id)
+    
     craft.name = params[:name] || craft.name
     craft.description = params[:description] || craft.description
     craft.difficulty = params[:difficulty] || craft.difficulty
     craft.materials = params[:materials] || craft.materials
-    craft.save
-    render json: craft
+
+    if craft.save
+      render json: craft
+    else 
+      render json: {errors: craft.errors.full_messages}, status: :unprocessable_entity
+    end 
   end
 
   def destroy

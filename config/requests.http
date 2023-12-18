@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NjIwNzY1Mzl9.RUwGbfzu5S1zUxLDLWgQd2M4OLyZBZx4hM-awuBmW-E
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNywiZXhwIjoxNjc5MzI2NTIxfQ.OBgbA39TlR2GpT8hzC1y1ZmU8rHFy58NnO3GMEz8fhU
 
 ### Users create (signup)
 POST http://localhost:3000/users
@@ -6,7 +6,7 @@ Content-Type: application/json
 
 {
   "name": "Test name",
-  "email": "mollyarisley+2@gmail.com",
+  "email": "rich@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -16,7 +16,7 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "rich@test.com",
   "password": "password"
 }
 
@@ -29,7 +29,7 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
- "name": "Test2",
+ "name": "Does it work?",
  "description": "testing 1, 2, 3",
  "materials": "testing 1, 2, 3",
  "difficulty": 3,
@@ -40,14 +40,13 @@ Content-Type: application/json
 GET http://localhost:3000/crafts/9
 
 ### Crafts Update
-PATCH http://localhost:3000/crafts/10
+PATCH http://localhost:3000/crafts/12
 Authorization: Bearer {{jwt}}
 
 {
- "name": "test 4",
- "description": "testing 1, 2, 3",
+ "name": "not mod pog",
+ "description": "test",
  "materials": "testing 1, 2, 3",
- "difficulty": 2,
  "image_url": "test",
  "image": "n/a"
 }
